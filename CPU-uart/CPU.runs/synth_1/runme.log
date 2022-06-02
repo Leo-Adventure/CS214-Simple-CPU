@@ -1,0 +1,539 @@
+
+*** Running vivado
+    with args -log cputop.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cputop.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source cputop.tcl -notrace
+Command: synth_design -top cputop -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12964 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 344.215 ; gain = 101.262
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cputop' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/cputop.v:23]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [D:/Applications/Vivado/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (1#1) [D:/Applications/Vivado/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-638] synthesizing module 'cpu_clk' [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/cpu_clk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpu_clk' (2#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/cpu_clk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'debounce' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/confirmModule.v:22]
+	Parameter TIME_20MS bound to: 300000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (3#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/confirmModule.v:22]
+INFO: [Synth 8-638] synthesizing module 'uart' [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/uart_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'uart' (4#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/uart_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'control32' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/controller.v:22]
+INFO: [Synth 8-256] done synthesizing module 'control32' (5#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/controller.v:22]
+INFO: [Synth 8-638] synthesizing module 'Ifetc32' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/ifetch.v:22]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (6#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'Ifetc32' (7#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/ifetch.v:22]
+INFO: [Synth 8-638] synthesizing module 'executs32' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/executs32.v:23]
+INFO: [Synth 8-226] default block is never used [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/executs32.v:58]
+INFO: [Synth 8-256] done synthesizing module 'executs32' (8#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/executs32.v:23]
+INFO: [Synth 8-638] synthesizing module 'decode32' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/decoder.v:21]
+INFO: [Synth 8-256] done synthesizing module 'decode32' (9#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/decoder.v:21]
+INFO: [Synth 8-638] synthesizing module 'dmemory32' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/dmemory32.v:22]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (10#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'dmemory32' (11#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/dmemory32.v:22]
+INFO: [Synth 8-638] synthesizing module 'seg7' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/seg7.v:23]
+	Parameter period bound to: 30000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'rst_n' should be on the sensitivity list [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/seg7.v:67]
+INFO: [Synth 8-256] done synthesizing module 'seg7' (12#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/seg7.v:23]
+INFO: [Synth 8-256] done synthesizing module 'cputop' (13#1) [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/cputop.v:23]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[29]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[28]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[27]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[26]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[25]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[24]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[23]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[22]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[21]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[20]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[19]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[18]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[17]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[16]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[1]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[0]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port upg_address_i[14]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Function_opcode[5]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Function_opcode[4]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[5]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[4]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[3]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Jr
+WARNING: [Synth 8-3331] design Ifetc32 has unconnected port upg_address_i[14]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 400.465 ; gain = 157.512
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 400.465 ; gain = 157.512
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp4/RAM_in_context.xdc] for cell 'mem32/ram'
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp4/RAM_in_context.xdc] for cell 'mem32/ram'
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp5/cpu_clk_in_context.xdc] for cell 'cpu_clk1'
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp5/cpu_clk_in_context.xdc] for cell 'cpu_clk1'
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp6/uart_in_context.xdc] for cell 'Uart'
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp6/uart_in_context.xdc] for cell 'Uart'
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp7/prgrom_in_context.xdc] for cell 'if32/prgrom'
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/.Xil/Vivado-12728-LAPTOP-6E9TDGFI/dcp7/prgrom_in_context.xdc] for cell 'if32/prgrom'
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/constrs_1/imports/new/ports.xdc]
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/constrs_1/imports/new/ports.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/constrs_1/imports/new/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cputop_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cputop_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 763.273 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 763.273 ; gain = 520.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 763.273 ; gain = 520.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for Uart. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for cpu_clk1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for if32/prgrom. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mem32/ram. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 763.273 ; gain = 520.320
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "key_out" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/confirmModule.v:40]
+INFO: [Synth 8-5546] ROM "R_format" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "lw" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sw" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jal" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "beq" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "bne" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jmp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "Instruction" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/executs32.v:54]
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "is_sltiu" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_xori" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_ori" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_addi" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-327] inferring latch for variable 'display_number_reg' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/seg7.v:105]
+WARNING: [Synth 8-327] inferring latch for variable 'display_reg' [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/seg7.v:88]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 763.273 ; gain = 520.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 33    
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 211   
+	   4 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 2     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 18    
+	   2 Input      1 Bit        Muxes := 77    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cputop 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module control32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 14    
+Module Ifetc32 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module executs32 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   8 Input     32 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module decode32 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 193   
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 64    
+Module dmemory32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module seg7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "is_addi" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_ori" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_xori" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "is_sltiu" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "debounce1/key_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "if32/Instruction" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element debounce1/cnt_reg was removed.  [D:/Files/Codes/Verilog/CPU-uart/CPU.srcs/sources_1/new/confirmModule.v:40]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Function_opcode[5]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Function_opcode[4]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[5]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[4]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Exe_opcode[3]
+WARNING: [Synth 8-3331] design executs32 has unconnected port Jr
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][31]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][0]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][1]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][2]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][3]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][4]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][5]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][6]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][7]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][8]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][9]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][10]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][11]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][12]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][13]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][14]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][15]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][16]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][17]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][18]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][19]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][20]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][21]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][22]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][23]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][24]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][25]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][26]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][27]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][28]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'id32/register_reg[0][29]' (FDE) to 'id32/register_reg[0][30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (id32/\register_reg[0][30] )
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][30]) is unused and will be removed from module decode32.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 763.273 ; gain = 520.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+-------------+---------------+----------------+
+|Module Name | RTL Object  | Depth x Width | Implemented As | 
++------------+-------------+---------------+----------------+
+|seg7        | segment_out | 32x8          | LUT            | 
+|seg7        | segment_out | 32x8          | LUT            | 
++------------+-------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk1/clk_out1' to pin 'cpu_clk1/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk1/clk_out2' to pin 'cpu_clk1/bbstub_clk_out2/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 817.230 ; gain = 574.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 823.793 ; gain = 580.840
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |cpu_clk       |         1|
+|2     |uart          |         1|
+|3     |prgrom        |         1|
+|4     |RAM           |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |RAM     |     1|
+|2     |cpu_clk |     1|
+|3     |prgrom  |     1|
+|4     |uart    |     1|
+|5     |BUFG    |     3|
+|6     |CARRY4  |   367|
+|7     |LUT1    |    14|
+|8     |LUT2    |   514|
+|9     |LUT3    |   370|
+|10    |LUT4    |   603|
+|11    |LUT5    |  1000|
+|12    |LUT6    |  1147|
+|13    |MUXF7   |   294|
+|14    |MUXF8   |    36|
+|15    |FDRE    |  1189|
+|16    |FDSE    |     1|
+|17    |LD      |    36|
+|18    |LDC     |     1|
+|19    |IBUF    |    29|
+|20    |OBUF    |    41|
++------+--------+------+
+
+Report Instance Areas: 
++------+------------+----------+------+
+|      |Instance    |Module    |Cells |
++------+------------+----------+------+
+|1     |top         |          |  5762|
+|2     |  debounce1 |debounce  |    37|
+|3     |  exe32     |executs32 |    20|
+|4     |  id32      |decode32  |  2156|
+|5     |  if32      |Ifetc32   |  1480|
+|6     |  mem32     |dmemory32 |   129|
+|7     |  seg7      |seg7      |  1748|
++------+------------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 897.000 ; gain = 654.047
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 897.000 ; gain = 291.238
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 897.000 ; gain = 654.047
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 763 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 37 instances were transformed.
+  LD => LDCE: 36 instances
+  LDC => LDCE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+101 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 897.000 ; gain = 665.574
+INFO: [Common 17-1381] The checkpoint 'D:/Files/Codes/Verilog/CPU-uart/CPU.runs/synth_1/cputop.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cputop_utilization_synth.rpt -pb cputop_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 897.000 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  1 12:18:33 2022...

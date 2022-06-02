@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jun  1 11:57:51 2022
+# Process ID: 13040
+# Current directory: D:/Files/Codes/Verilog/CPU-uart/CPU.runs/prgrom_synth_1
+# Command line: vivado.exe -log prgrom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source prgrom.tcl
+# Log file: D:/Files/Codes/Verilog/CPU-uart/CPU.runs/prgrom_synth_1/prgrom.vds
+# Journal file: D:/Files/Codes/Verilog/CPU-uart/CPU.runs/prgrom_synth_1\vivado.jou
+#-----------------------------------------------------------
+source prgrom.tcl -notrace
