@@ -1,7 +1,0 @@
-Running: xsim.dir/entertest_behav/xsimk.exe -simmode gui -wdb entertest_behav.wdb -simrunnum 0 -socket 53412
-Design successfully loaded
-Design Loading Memory Usage: 9732 KB (Peak: 9732 KB)
-Design Loading CPU Usage: 233 ms
-Simulation completed
-Simulation Memory Usage: 11664 KB (Peak: 11664 KB)
-Simulation CPU Usage: 2077 ms
