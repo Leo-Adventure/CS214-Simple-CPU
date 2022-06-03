@@ -4,7 +4,7 @@
 
 Cobalt-27  负责任务: 子模块 (ALU) 以及顶层模块（CPU_Top) , syscall部分
 
-Aeroplane  负责任务: 子模块（data memory and ifetch)，Uart接口，syscall，七段数码管
+aeroplanepaper  负责任务: 子模块（data memory and ifetch)，Uart接口，syscall，七段数码管
 
 MQ_Adventure   负责任务: 子模块（decoder and controller), 测试场景1, 2 的测试汇编, report 
 
