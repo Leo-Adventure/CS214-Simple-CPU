@@ -18,7 +18,7 @@
 
 实现了Minisys指令集，Minisys 指令集是MIPS32指令集的子集
 
-![](C:\大二课程\计算机组成原理\CPU\picture\ISA.png)
+![](picture/ISA.png)
 
 除此之外，我们还额外扩展了syscall 指令
 
@@ -45,7 +45,7 @@
 
 ####  内部子模块接口连接图
 
-![](C:\大二课程\计算机组成原理\CPU\picture\interface.png)
+![](picture/interfac)
 
 #### 子模块设计说明
 
