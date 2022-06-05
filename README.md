@@ -4,7 +4,7 @@
 
 ## 开发者(developers)
 
-<<<<<<< HEAD@MQ_Adventure 开发部分: 子模块（decoder and controller), 测试场景1, 2 的测试汇编, Report 
+@MQ_Adventure 开发部分: 子模块（decoder and controller), 测试场景1, 2 的测试汇编, Report 
 
 @Cobalt-27 开发部分: 子模块 (ALU) 以及顶层模块（CPU_Top) , syscall部分
 
