@@ -45,7 +45,7 @@
 
 ####  内部子模块接口连接图
 
-![](picture/interfac)
+![](picture/interface.png)
 
 #### 子模块设计说明
 
