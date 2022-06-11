@@ -1,6 +1,7 @@
+![](https://img.shields.io/apm/l/vim-mode)
+
 # CS214 CPU Report
 
-[TOC]
 
 ## 开发者(developers)
 
