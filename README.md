@@ -4,11 +4,11 @@
 
 ## 开发者(developers)
 
-@MQ_Adventure 开发部分: 子模块（decoder and controller), 测试场景1, 2 的测试汇编, Report 
+12012023 罗嘉俊 贡献比: 33.3%  负责任务: 子模块 (ALU) 以及顶层模块（CPU_Top) , syscall部分
 
-@Cobalt-27 开发部分: 子模块 (ALU) 以及顶层模块（CPU_Top) , syscall部分
+12012924 张骥霄 贡献比: 33.3%  负责任务: 子模块（data memory and ifetch)，Uart接口，syscall，七段数码管
 
-@aeroplanepaper 开发部分: 子模块（data memory and ifetch)，Uart接口，syscall，七段数码管
+12012919 廖铭骞 贡献比: 33.3%  负责任务: 子模块（decoder and controller), 测试场景1, 2 的测试汇编, Report 
 
 ## CPU 结构
 
@@ -18,7 +18,7 @@
 
 实现了Minisys指令集，Minisys 指令集是MIPS32指令集的子集
 
-![](picture/ISA.png)
+![](C:\大二课程\计算机组成原理\CPU\picture\ISA.png)
 
 除此之外，我们还额外扩展了syscall 指令
 
@@ -45,7 +45,7 @@
 
 ####  内部子模块接口连接图
 
-![](picture/interface.png)
+![](C:\大二课程\计算机组成原理\CPU\picture\interface.png)
 
 #### 子模块设计说明
 
@@ -256,7 +256,7 @@ module Uart(
 
 ## Bonus 说明
 
-#### 扩展指令集 
+#### 扩展指令集 syscall
 
 在本 CPU 当中，我们实现了 syscall ，且我们的 syscall 可以比较全面地支持实际 syscall 使用中的大部分功能，具体功能如下所示：
 
@@ -268,6 +268,121 @@ module Uart(
 - 程序退出
 
 并且全部的 syscall 功能是通过软件而不是硬件实现，符合现实操作系统中syscall的实现方式。
+
+对于 syscall，我们小组的实现方式是通过软件进行，即实现了 syscall 之后，我们可以在实际的测试asm文件当中将 $v0 寄存器的值进行赋值来指定使用的 syscall 指令类型，随后直接 syscall 即可使得系统使用该功能。
+
+在测试文件中调用syscall 的方式如下列代码所示
+
+```assembly
+ori $v0, $zero, 1 # 读取数字
+syscall
+ori $v0, $zero, 2 # 显示数字
+	syscall
+```
+
+首先对我们小组支持的 syscall 种类进行相应的代码展示以及解释
+
+- 读取数字
+
+  需要解释的是第一次循环时在不断读取回车的状态等待回车键按下，第二次循环时在等待回车键松开，而第三部分是在读取 switch 的状态并且存放到 \$v0 寄存器，之后 \$v0 就放置了按下回车键的时候 switch 存储的内容，实现了对数据的读取。回车键以及 swirch 的状态都存储在一个固定的内存地址。
+
+```assembly
+sys1:
+
+	ori $26, $zero, 1
+	bne $26, $v0, sys2
+	lui $26, 0xf000
+
+	loopenter:
+	lw $27,0($26)
+	beq $27,$zero,loopenter
+
+	loopenter2:
+	lw $27,0($26)
+	bne $27,$zero,loopenter2
+	
+	#switch
+	lui $26, 0x8000
+	lw $v0,0($26)
+	j exit
+```
+
+- 显示数字
+
+```assembly
+sys2:
+	ori $26, $zero, 2
+	bne $26, $v0, sys3
+	lui $26, 0x8000
+	sw $a0, 0($26)
+	j exit
+```
+
+
+
+通过一系列测试，测定出来系统休眠秒数与执行 asm 语句条数存在线性关系，于是思考可以通过让 asm 语句执行进入一些循环使得系统 "休眠"。
+
+- 系统休眠一秒
+
+```assembly
+sys4:
+	ori $26, $zero, 4
+	bne $26, $v0, sys5
+	lui $27, 0x0000
+	ori $27, $27, 0x8000
+	loopsys4:
+	addi $26, $26, 1
+	bne $26, $27, loopsys4
+
+	j exit
+
+```
+
+
+
+- 系统休眠指定任意指定时间
+
+```assembly
+sys5:
+	ori $26, $zero, 5
+	bne $26, $v0, sys6
+	or $26,$zero,$zero
+	or $27,$zero,$a0
+	loopsys5:
+	addi $26, $26, 1
+	bne $26, $27, loopsys5
+	j exit
+```
+
+
+
+- 单独控制七段数码管的显示
+
+```assembly
+sys3:
+	ori $26, $zero, 3
+	bne $26, $v0, sys4
+	lui $26, 0xf000
+	sw $a0, 0($26)
+	j exit
+```
+
+
+
+- 程序退出
+
+```assembly
+sys6:
+	ori $26, $zero, 6
+	bne $26, $v0, exit
+	loopsys6:
+	j loopsys6
+
+```
+
+
+
+在扩展了 syscall 指令集之后，调用系统指令可以更加便捷更加直观地在 asm 测试文件中执行，提高了测试文件的编写效率。
 
 #### 优化用户交互体验
 
@@ -284,13 +399,15 @@ module Uart(
 - 烧写完成显示 “DONE”
 - 支持自定义字符扩展
 
+这些七段数码管的显示已经在视频当中都进行了展示。
+
 #### 开机动效
 
-为了增加 CPU 开机的提示，在 CPU 开机时，会交替在七段数码管显示 “HELLO” 字样与在 LED 灯进行流水灯展示。而这个功能的实现依赖于第一点提到的 syscall 使系统休眠任意秒数的功能。
+为了增加 CPU 开机的提示，在 CPU 开机时，会交替在七段数码管显示 “HELLO” 字样与在 LED 灯进行流水灯展示。而这个功能的实现依赖于第一点提到的 syscall 使系统休眠任意秒数的功能。这一部分也已经在视频当中有所展示。
 
 #### 多种 IO 设备支持
 
-我们的 CPU 总体支持 5 种 IO 设备，如下所示：
+我们的 CPU 总体支持 5 种 IO 设备，这些设备的相关显示已经在视频当中有了充分的展示，我们小组支持的IO设备种类如下所示：
 
 - 拨码开关
 - Uart
@@ -302,7 +419,59 @@ module Uart(
 
 在我们小组实现的 CPU 当中，进行了CPU子模块结构的优化，将 MemOrIO 模块优化综合进入 dmemory 子模块，不需要像原有的 MemOrIO 需要修改其他子模块（controller，decoder...），可以更加优雅地控制IO设备以及内存的映射关系。
 
+在进行 memorIO 的替换，将其合入 dmemory 子模块部分之后，dmemory 模块内部实现介绍如下：
+
+下面这部分代码是通过判断两位高位地址是否是 `2'b10`或者是`2b11`来指示所用信号是来自拨码开关还是来自回车键或者是数据内存。
+
+```verilog
+always @(*)//read
+    begin
+        if(address[31:30] == 2'b10)
+            readData = read_from_switch;
+        else if(address[31:30] == 2'b11)
+            readData = enter;
+        else
+            readData=read_from_ram;
+    end
+```
+
+之后在时钟下降沿的时候判断高两位地址的数值，来替换 memorIO 的功能进行 led 灯以及七段数码管的控制。
+
+```verilog
+always @(negedge clock) // 此处是根据高两位地址的数值来进行 led 灯的对应显示
+    begin
+        if(rst) // 如果复位信号为 1，则对 led 灯信号进行置零
+            led_out<=0;
+        else if(address[31:30] ==2'b10 && memWrite)// 如果高两位地址信号为 10 且 写入内存信号为1，则led 灯进行对应的显示
+            led_out<=writeData[23:0];
+        else
+            led_out<=led_out;
+    end
+
+always @(negedge clock)// 此处是根据高两位地址的数值来进行七段数码管相应信息的对应显示
+    begin
+        if(rst)// 如果复位信号为 1，则对七段数码管信号进行置零
+            seg_out=0;
+        else if(address[31:30] ==2'b11 && memWrite)// 如果高两位地址信号为 10 且 写入内存信号为1，则七段数码管进行对应的显示
+            seg_out=writeData;
+        else if(address[31:30] ==2'b10 && memWrite)
+            seg_out={8'b0000_0000, writeData[23:0]};
+        else
+            seg_out = seg_out;
+    end
+
+```
+
+通过在 dmemory 里面增加相应的信号控制，可以将 memorIO 子模块进行优化，使得不需要在加入 memorIO 的同时改变其他子模块的对应接口与功能，更加方便地控制了IO设备与内存之间的映射关系。
+
 #### Uart 优化
 
-我们小组还对 Uart 的使用进行了优化，使得高位内存不会被 Uart 覆盖，而将其保留给 syscall，并且高位内存还有较多可供开发，使得 CPU 的可扩展性更优。
+我们小组还对 Uart 的使用进行了优化，使得高位内存不会被 Uart 覆盖，而将其保留给 syscall。并且高位内存还有较多可供开发，使得 CPU 的可扩展性更优。
 
+对于 syscall 指令集的扩展，以及在 asm 当中调用 syscall 的方式已经在前面的部分进行了阐释，下面我们将对 uart 的优化进行详细阐释。
+
+我们小组对 uart 做的优化是让 uart 只烧写内存的低段，使得 syscall 程序烧写之后便不会被修改。
+
+我们的 syscall 存储在内存的末端，当程序调用 syscall 的时候，就会将程序跳转到对应的区域进行执行。如果 uart 不进行优化，每次烧写新的程序之后， syscall 程序就需要重新烧写，这样会使得效率降低。而通过优化 uart，使得第一次烧写 syscall 的时候将该程序写入地址的高段，在之后通过 uart 烧写程序时，syscall 便会因为在地址的高段而被保留下来，不需要重新进行烧写。并且这样还可以使得高位内存还有较多空间用于开发其他功能。
+
+经过这样的优化，我们的程序可以随时使用 syscall ，并且还可以随时烧写新的程序，syscall 程序并不会受到新程序的干扰，也不需要反复烧写 syscall 程序。
