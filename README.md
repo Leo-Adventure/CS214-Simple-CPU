@@ -2,6 +2,8 @@
 
 [TOC]
 
+## Score: 124/130
+
 ## 开发者(developers)
 
 12012023 罗嘉俊 贡献比: 33.3%  负责任务: 子模块 (ALU) 以及顶层模块（CPU_Top) , syscall部分
